@@ -1,15 +1,13 @@
 from flask import Flask
+from flask import render_template
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    return """Hello World!
-
-        <a href="/quiz">Take the quiz</a>
-    """
+    return render_template("main.html")
 
 
 @app.route('/quiz')
 def quiz():
-    return '<h1>QUIZ GOES HERE</h1>'
+    return render_template("quiz.html")
